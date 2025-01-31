@@ -18,4 +18,11 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  width: 393px;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
