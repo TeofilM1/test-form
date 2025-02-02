@@ -6,35 +6,21 @@ import {
 import { formResolver } from "@/resolvers/formResolver";
 import { FormInput } from "@/components/FormInput/FormInput";
 import { LABELS } from "./utils/labels";
-// import { useCallback, useState } from "react";
-import { IGetMain } from "./types";
+import { IGetFirst } from "./types";
 
-export const First = ({ setShowOne }: IGetMain) => {
-  // const [data, setData] = useState({
-  //   firstName: "",
-  //   lastName: "",
-  // });
+export const First = ({ setShowOne, next }: IGetFirst) => {
   const methods = useForm<TValidationSchema>({
     resolver: formResolver(validationSchema),
-    mode:'all',
-    // defaultValues: {
-    //   firstName: "",
-    //   lastName: "",
-    // },
   });
-  console.log(methods.getValues());
 
   const onSubmit = (submitData: TValidationSchema) => {
     console.log(submitData);
-
-
+    next();
     setShowOne(false);
-    methods.setValue('firstName', submitData.firstName);
-    methods.setValue('lastName', submitData.lastName);
   };
 
   return (
-    <div className="p-6 gap-6 flex flex-col">
+    <div className="p-6 gap-6 flex flex-col w-96">
       <h4 className="font-bold ">{LABELS.introductions}</h4>
       <FormProvider {...methods}>
         <form className=" flex flex-col gap-6">
@@ -61,7 +47,7 @@ export const First = ({ setShowOne }: IGetMain) => {
           <button
             type="submit"
             onClick={methods.handleSubmit(onSubmit)}
-            className="h-14 w-full bg-blue-500 text-white rounded-full"
+            className="h-14 w-[345] bg-blue-500 text-white rounded-full"
           >
             {LABELS.continue}
           </button>

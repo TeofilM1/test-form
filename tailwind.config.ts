@@ -13,6 +13,20 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+        toLeft: {
+          "0%": { transform: "translatex(100%)" },
+          "100%": { transform: "translatex(0%)" },
+        },
+        toRight: {
+          "0%": { transform: "translatex(-100%)" },
+          "100%": { transform: "translatex(0%)" },
+        },
+      },
+      animation: {
+        toLeft: "toLeft 200ms ease-in",
+        toRight: "toRight 200ms ease-out",
+      },
     },
   },
   plugins: [],

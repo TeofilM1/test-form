@@ -1,5 +1,5 @@
 
-import { Input } from "../Input/Input";
+import { PhoneNumber } from "../PhoneNumber/PhoneNumber";
 import { IFormInput } from "./types";
 import {
   FieldValues,
@@ -8,7 +8,7 @@ import {
   useFormContext,
 } from "react-hook-form";
 
-export const FormInput = <T extends FieldValues>({
+export const FormPhoneInput = <T extends FieldValues>({
   name,
   ...props
 }: IFormInput<T>) => {
@@ -19,7 +19,7 @@ export const FormInput = <T extends FieldValues>({
   } = useController({ control, name });
 
   return (
-    <Input
+    <PhoneNumber
       {...field}
       {...props}
       error={get(errors, name)?.message as string}

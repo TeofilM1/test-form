@@ -3,16 +3,21 @@ import NumberOne from "../../../../assets/One.svg";
 import NumberTwo from "../../../../assets/Two.svg";
 import Image from "next/image";
 import { IGetHeader } from "./types";
+import Back from "../../../../assets/LeftArrow.svg";
 
-export const Header = ({ showOne, setShowOne }: IGetHeader) => {
+export const Header = ({ showOne, setShowOne, previous }: IGetHeader) => {
+  const onBack = () => {
+    setShowOne(true);
+    previous();
+  };
   return (
-    <div>
-      <div className="h-32 flex justify-center items-center pt-14 pb-3">
-        {!showOne && (
-          <button onClick={() => setShowOne(true)} className="justify-start">
-            back
-          </button>
-        )}
+    <div className={`${!showOne && "-mt-[24]"}`}>
+      {!showOne && (
+        <button onClick={() => onBack()} className="relative top-[95] left-6">
+          <Image src={Back} width={14} height={14} alt="Left Arrow" />
+        </button>
+      )}
+      <div className="h-32 flex justify-center items-center pt-14 pb-3 px-6">
         <Image src={NumberIcon} width={57} height={56} alt="Number Icon" />
       </div>
       <div className="flex justify-center items-center gap-2 p-2">
