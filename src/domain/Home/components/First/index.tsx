@@ -49,7 +49,7 @@ export const First = ({ setCurrent, next }: IGetFirst) => {
           <button
             type="submit"
             onClick={methods.handleSubmit(onSubmit)}
-            className="h-14 w-[345] bg-blue-500 text-white rounded-full"
+            className="h-14 w-[345px] bg-blue-500 text-white rounded-full"
           >
             {LABELS.continue}
           </button>
