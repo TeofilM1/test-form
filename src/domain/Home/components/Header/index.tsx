@@ -10,10 +10,10 @@ export const Header = ({ previous, current }: IGetHeader) => {
     previous();
   };
   return (
-    <div className={`${current === 1 && "-mt-[24]"}`}>
+    <div className={`${current === 1 && "-mt-[24px]"}`}>
       {/* if second page show button to go back*/}
       {current === 1 && (
-        <button onClick={() => onBack()} className="relative top-[95] left-6">
+        <button onClick={() => onBack()} className="relative top-[95px] left-6">
           <Image src={Back} width={14} height={14} alt="Left Arrow" />
         </button>
       )}
