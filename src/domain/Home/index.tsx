@@ -23,7 +23,7 @@ export const Home = () => {
           setCongratulations={setCongratulations}
         />
       ) : (
-        <div className="">
+        <div className="flex justify-center">
           <div className="overflow-hidden relative w-[393px]">
             <Header current={current} previous={previous} />
             <div
