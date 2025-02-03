@@ -24,7 +24,7 @@ export const Home = () => {
         />
       ) : (
         <div className="">
-          <div className="overflow-hidden relative w-[393]">
+          <div className="overflow-hidden relative w-[393px]">
             <Header current={current} previous={previous} />
             <div
               className="flex transition ease-out duration-200"
