@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'export',
-  distDir: 'crc',
+  distDir: 'src',
   images: {
     unoptimized: true,
   }
