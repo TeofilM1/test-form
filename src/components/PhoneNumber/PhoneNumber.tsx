@@ -18,15 +18,15 @@ const PhoneInputComponent = (
             width: "112px",
             borderRadius: "56px",
             height: "56px",
-            border: "2px solid #0216261F",
             marginRight: "4px",
+            border: error ? '2px solid #F23148' : '2px solid #0216261F',
           },
         }}
         inputStyle={{
           width: "100%",
           borderRadius: "56px",
           height: "56px",
-          border: "2px solid #0216261F",
+          border: error ? '2px solid #F23148' : '2px solid #0216261F',
         }}
         defaultCountry="ua"
         value={value}

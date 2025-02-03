@@ -4,8 +4,8 @@ import Close from "../../../../assets/Close.svg";
 
 export const Modal = ({ name, setModal }: IGetModal) => {
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-white flex  ">
-      <div className="max-w-[393px] pt-16 px-6 bg-white shadow-lg rounded-md">
+    <div className="relative bottom-[500] left-0 w-full h-full bg-white flex  ">
+      <div className="max-w-[393px] pt-20 px-6 bg-white shadow-lg rounded-md">
         <div className="flex justify-end">
           <button
             type="button"

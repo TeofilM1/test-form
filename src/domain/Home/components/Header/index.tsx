@@ -5,18 +5,19 @@ import Image from "next/image";
 import { IGetHeader } from "./types";
 import Back from "../../../../assets/LeftArrow.svg";
 
-export const Header = ({ showOne, setShowOne, previous }: IGetHeader) => {
+export const Header = ({ previous, current }: IGetHeader) => {
   const onBack = () => {
-    setShowOne(true);
     previous();
   };
   return (
-    <div className={`${!showOne && "-mt-[24]"}`}>
-      {!showOne && (
+    <div className={`${current === 1 && "-mt-[24]"}`}>
+      {/* if second page show button to go back*/}
+      {current === 1 && (
         <button onClick={() => onBack()} className="relative top-[95] left-6">
           <Image src={Back} width={14} height={14} alt="Left Arrow" />
         </button>
       )}
+         {/* -----------------------------------*/}
       <div className="h-32 flex justify-center items-center pt-14 pb-3 px-6">
         <Image src={NumberIcon} width={57} height={56} alt="Number Icon" />
       </div>

@@ -8,15 +8,17 @@ import { FormInput } from "@/components/FormInput/FormInput";
 import { LABELS } from "./utils/labels";
 import { IGetFirst } from "./types";
 
-export const First = ({ setShowOne, next }: IGetFirst) => {
+export const First = ({ setCurrent, next }: IGetFirst) => {
+  // react-hook-form for fields validation and state managment
   const methods = useForm<TValidationSchema>({
     resolver: formResolver(validationSchema),
   });
 
   const onSubmit = (submitData: TValidationSchema) => {
+    // on submit if need send data to server if not go to next page
     console.log(submitData);
     next();
-    setShowOne(false);
+    setCurrent(1);
   };
 
   return (

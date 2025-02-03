@@ -11,13 +11,16 @@ import { IGetSecond } from "./types";
 import { FormPhoneInput } from "@/components/FormPhoneNumber/FormPhoneNumber";
 
 export const Second = ({ setCongratulations }: IGetSecond) => {
+  //state for name and modal for terms and conditions
   const [openModal, setModal] = useState(false);
   const [name, setName] = useState("");
+  // state for phone input
   const [phone, setPhone] = useState("");
+   // react-hook-form for fields validation
   const methods = useForm<TValidationSchema>({
     resolver: formResolver(validationSchema),
   });
-
+  //open modal and set terms or conditions
   const handleModal = (name: string) => {
     setName(name);
     setModal(true);
@@ -29,6 +32,7 @@ export const Second = ({ setCongratulations }: IGetSecond) => {
   };
 
   const onSubmit = (submitData: TValidationSchema) => {
+      // on submit if need send data to server if not go to last page
     console.log(submitData);
     setCongratulations(true);
   };
